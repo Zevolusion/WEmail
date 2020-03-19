@@ -84,8 +84,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
 		// 构建树形节点
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("电子邮件系统");
-		DefaultMutableTreeNode inbox = new DefaultMutableTreeNode("收件夹");
-		DefaultMutableTreeNode send = new DefaultMutableTreeNode("发件夹");
+		DefaultMutableTreeNode inbox = new DefaultMutableTreeNode("收件箱");
+		DefaultMutableTreeNode send = new DefaultMutableTreeNode("新邮件");
 		DefaultMutableTreeNode AlreadySend = new DefaultMutableTreeNode("已发送邮件");
 		DefaultMutableTreeNode delete = new DefaultMutableTreeNode("已删除邮件");
 		root.add(send);
@@ -111,7 +111,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
 		addLinkmanButton = new JButton();
 		addLinkmanButton.setText("联系人(C)");
-		addLinkmanButton.setIcon(EditorUtils.createIcon("linkman.gif"));
+		addLinkmanButton.setIcon(EditorUtils.createIcon("linkman.png"));
 		panel.add(addLinkmanButton, BorderLayout.NORTH);
 		addLinkmanButton.addActionListener(this);// 注册添加联系人事件
 		readLinkman = new ReadLinkmanXMl();
@@ -205,10 +205,10 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 		if (e.getSource() == tree && e.getButton() != 3 && e.getButton() != 2) {
 			if (selectedNode == null)
 				return;
-			else if (selectedNode.toString().equals("发件夹")) {
+			else if (selectedNode.toString().equals("新邮件")) {
 				sendFrame = FrameFactory.getFrameFactory().getSendFrame();
 				addIFame(sendFrame);// 发件夹
-			} else if (selectedNode.toString().equals("收件夹")) {
+			} else if (selectedNode.toString().equals("收件箱")) {
 				addIFame(FrameFactory.getFrameFactory().getReceiveFrame());// 收件夹
 			} else if (selectedNode.toString().equals("已发送邮件")) {
 				addIFame(FrameFactory.getFrameFactory().getSendedFrame());// 已发送邮件

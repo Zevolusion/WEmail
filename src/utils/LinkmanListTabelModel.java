@@ -5,10 +5,7 @@ import java.util.Vector;
 import javax.swing.table.AbstractTableModel;
 
 /**
- * 类说明：联系人列表表格模型
- * 
- * @author 作者: LiuJunGuang
- * @version 创建时间：2011-1-1 下午04:05:26
+ * 联系人列表表格模型
  */
 public class LinkmanListTabelModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;

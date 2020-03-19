@@ -6,10 +6,7 @@ import java.util.Vector;
 import javax.swing.JTable;
 
 /**
- * 类说明：恢复邮件类
- * 
- * @author 作者:user
- * @version 创建时间：2011-2-22 下午06:37:03
+ * 恢复邮件类
  */
 public class RecycleMailTable {
 	private static RecycleMailTable recycleMail = new RecycleMailTable();;

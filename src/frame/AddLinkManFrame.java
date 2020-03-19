@@ -43,7 +43,7 @@ public class AddLinkManFrame extends JInternalFrame implements ActionListener,
 	private LinkmanEventAction linkmanEvent = null;
 
 	public AddLinkManFrame() {
-		this.setFrameIcon(EditorUtils.createIcon("addLinkman.jpg"));
+		this.setFrameIcon(EditorUtils.createIcon("addLinkman.png"));
 		setClosable(true);
 		setIconifiable(true);
 		setBounds(0, 0, 593, 531);

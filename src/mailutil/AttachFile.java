@@ -10,9 +10,6 @@ import javax.swing.JOptionPane;
 
 /**
  * 类说明：附件的操作类
- * 
- * @author 作者: LiuJunGuang
- * @version 创建时间：2011-4-22 下午06:21:05
  */
 public class AttachFile {
 

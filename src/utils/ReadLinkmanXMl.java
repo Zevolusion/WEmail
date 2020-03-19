@@ -12,10 +12,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 /**
- * 类说明：读取通讯录列表信息
- * 
- * @author 作者: LiuJunGuang
- * @version 创建时间：2011-1-2 下午07:35:06
+ * 读取通讯录列表信息
  */
 public class ReadLinkmanXMl {
 	private static Vector<Vector<String>> linkmans = LinkmanListTabelModel

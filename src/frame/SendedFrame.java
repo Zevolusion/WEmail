@@ -6,10 +6,7 @@ import utils.EditorUtils;
 import utils.SendedMailTable;
 
 /**
- * 类说明：已发送邮件界面
- * 
- * @author 作者: LiuJunGuang
- * @version 创建时间：2011-2-23 下午07:40:23
+ * 已发送邮件界面
  */
 public class SendedFrame extends BaseReceiceFrame {
 	private SendedMailTable sendedMail = null;// 已发送邮件列表对象

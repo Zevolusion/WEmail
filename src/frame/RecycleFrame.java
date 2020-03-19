@@ -7,10 +7,7 @@ import utils.ReceiveMailTable;
 import utils.RecycleMailTable;
 
 /**
- * 类说明：回收站 删除邮件的恢复和彻底删除
- * 
- * @author 作者: user
- * @version 创建时间：2011-2-22 下午06:08:58
+ * 回收站 删除邮件的恢复和彻底删除
  */
 public class RecycleFrame extends BaseReceiceFrame {
 	private RecycleMailTable recycleMail = null;

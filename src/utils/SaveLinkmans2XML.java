@@ -12,10 +12,7 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
 /**
- * 类说明：保存联系人为xml文件
- * 
- * @author 作者: LiuJunGuang
- * @version 创建时间：2011-1-2 下午06:04:19
+ * 保存联系人为xml文件
  */
 public class SaveLinkmans2XML {
 	private Document document = null;// xml文档对象

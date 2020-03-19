@@ -126,10 +126,10 @@ public class SendFrame extends JInternalFrame implements ActionListener,
 		// 工具条
 		final JToolBar toolBar = new JToolBar();
 		getContentPane().add(toolBar);
-		sendButton = new JButton("发送", EditorUtils.createIcon("newsend.gif"));
+		sendButton = new JButton("发送", EditorUtils.createIcon("newsend.png"));
 		sendButton.addActionListener(this);
 		toolBar.add(sendButton);
-		resetButton = new JButton("重写", EditorUtils.createIcon("rewrite.gif"));
+		resetButton = new JButton("重写", EditorUtils.createIcon("rewrite.png"));
 		resetButton.addActionListener(this);
 		toolBar.add(resetButton);
 		// 附件列表

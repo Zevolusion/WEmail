@@ -24,12 +24,12 @@ public class ClassNameTreeCellRenderer extends DefaultTreeCellRenderer {
 		super.getTreeCellRendererComponent(tree, value, selected, expanded,
 				leaf, row, hasFocus);
 		if (row == 0) {
-			this.setIcon(EditorUtils.createIcon("home.gif"));
+			this.setIcon(EditorUtils.createIcon("home.png"));
 			this.setFont(bf);
-		} else if (value.toString().equals("收件夹")) {
+		} else if (value.toString().equals("收件箱")) {
 			this.setIcon(EditorUtils.createIcon("receive.png"));
 			this.setFont(bif);
-		} else if (value.toString().equals("发件夹")) {
+		} else if (value.toString().equals("新邮件")) {
 			this.setIcon(EditorUtils.createIcon("send.png"));
 			this.setFont(bif);
 		} else if (value.toString().equals("已发送邮件")) {

@@ -12,10 +12,7 @@ import utils.LinkmanListTabelModel;
 import utils.SaveLinkmans2XML;
 
 /**
- * 类说明：处理添加删除联系人事件
- * 
- * @author 作者: LiuJunGuang
- * @version 创建时间：2011-1-1 下午05:11:31
+ * 处理添加删除联系人事件
  */
 public class LinkmanEventAction {
 	Vector<Vector<String>> linkmanVectors = LinkmanListTabelModel.getVector();

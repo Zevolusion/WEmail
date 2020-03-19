@@ -10,10 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 /**
- * 类说明：进度条界面类 包括有、无模式两种进度条
- * 
- * @author 作者: user
- * @version 创建时间：2011-2-25 下午04:26:52
+ * 进度条界面类 包括有、无模式两种进度条
  */
 public class ProgressBarFrame extends JDialog {
 	private JLabel progressBarLabel = null;// 进度条上方的提示标签
