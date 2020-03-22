@@ -414,22 +414,22 @@ public class SendFrame extends JInternalFrame implements ActionListener,
 	}
 
 	// 添加联系人到收件人
-	public void addLinkman(String linkman) {
+	public void addContact(String contact) {
 		if (focusStatic == 2) {// 判断抄送文本框是否得到焦点
-			setJTextFieldString(copy_to, linkman);
+			setJTextFieldString(copy_to, contact);
 			copy_to.requestFocus();// 抄送人文本框得到焦点
 		} else {
 			to_mail.requestFocus();// 收件人文本框得到焦点
-			setJTextFieldString(to_mail, linkman);
+			setJTextFieldString(to_mail, contact);
 		}
 	}
 
 	// 设置文本框中的字符串
-	private void setJTextFieldString(JTextField jt, String linkman) {
+	private void setJTextFieldString(JTextField jt, String contact) {
 		String copy_toString = jt.getText();
 		if (!copy_toString.endsWith(";") && !copy_toString.equals(""))
 			copy_toString += ";";
-		copy_toString += linkman;
+		copy_toString += contact;
 		jt.setText(copy_toString);
 	}
 

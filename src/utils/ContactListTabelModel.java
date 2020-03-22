@@ -7,12 +7,12 @@ import javax.swing.table.AbstractTableModel;
 /**
  * 联系人列表表格模型
  */
-public class LinkmanListTabelModel extends AbstractTableModel {
+public class ContactListTabelModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	private final String[] COLUMNS = new String[] { "名称", "昵称", "电子邮箱地址" };
 	private static Vector<Vector<String>> v = new Vector<Vector<String>>();
 
-	public LinkmanListTabelModel() {
+	public ContactListTabelModel() {
 	}
 
 	@Override

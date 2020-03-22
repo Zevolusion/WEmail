@@ -1,6 +1,6 @@
 package utils;
 
-import frame.AddLinkManFrame;
+import frame.AddContactFrame;
 import frame.ReceiveFrame;
 import frame.RecycleFrame;
 import frame.SendFrame;
@@ -44,7 +44,7 @@ public class FrameFactory {
 
 	// 联系人列表
 
-	public AddLinkManFrame getAddLinkManFrame() {
-		return new AddLinkManFrame();
+	public AddContactFrame getAddContactFrame() {
+		return new AddContactFrame();
 	}
 }

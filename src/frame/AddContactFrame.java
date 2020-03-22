@@ -18,10 +18,10 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 import utils.EditorUtils;
-import utils.LinkmanListTabelModel;
-import action.LinkmanEventAction;
+import utils.ContactListTabelModel;
+import action.ContactEventAction;
 
-public class AddLinkManFrame extends JInternalFrame implements ActionListener,
+public class AddContactFrame extends JInternalFrame implements ActionListener,
 		DocumentListener {
 	private JTextField emailAdressTF = null;
 	private JTextField nickNameTF = null;
@@ -33,17 +33,17 @@ public class AddLinkManFrame extends JInternalFrame implements ActionListener,
 	private JButton delete = null;
 	private JButton ok = null;
 	private JButton cancel = null;
-	private JScrollPane linkmanJSP;
-	private JTable linkmanList = null;// 联系人列表
+	private JScrollPane contactJSP;
+	private JTable contactList = null;// 联系人列表
 	private JPanel editorJPanel = null;// 编辑面板
-	private JPanel linkManListJPanel = null;// 联系人列表面板
+	private JPanel contactListJPanel = null;// 联系人列表面板
 	private Box baseBox = null;
 	private Box boxV1 = null;
 	private Box boxV2 = null;
-	private LinkmanEventAction linkmanEvent = null;
+	private ContactEventAction contactEvent = null;
 
-	public AddLinkManFrame() {
-		this.setFrameIcon(EditorUtils.createIcon("addLinkman.png"));
+	public AddContactFrame() {
+		this.setFrameIcon(EditorUtils.createIcon("addContact.png"));
 		setClosable(true);
 		setIconifiable(true);
 		setBounds(0, 0, 593, 531);
@@ -68,10 +68,10 @@ public class AddLinkManFrame extends JInternalFrame implements ActionListener,
 		emailAdressTF = new JTextField(50);
 		emailAdressTF.getDocument().addDocumentListener(this);
 
-		linkmanList = new JTable();// 联系人列表
-		linkmanList.setModel(new LinkmanListTabelModel());
-		linkmanJSP = new JScrollPane(linkmanList);
-		linkmanJSP.setPreferredSize(new Dimension(400, 150));
+		contactList = new JTable();// 联系人列表
+		contactList.setModel(new ContactListTabelModel());
+		contactJSP = new JScrollPane(contactList);
+		contactJSP.setPreferredSize(new Dimension(400, 150));
 
 		add = new JButton("添加");
 		add.addActionListener(this);
@@ -95,14 +95,14 @@ public class AddLinkManFrame extends JInternalFrame implements ActionListener,
 		addAadDeletePanel.add(new JLabel("   "));
 		addAadDeletePanel.add(delete);
 		// 联系人列表面板
-		JPanel linkmanPanel = new JPanel();
-		linkmanPanel.add(linkmanJSP);
+		JPanel contactPanel = new JPanel();
+		contactPanel.add(contactJSP);
 
-		linkManListJPanel = new JPanel(new BorderLayout());
-		linkManListJPanel.setBorder(BorderFactory.createTitledBorder("联系人列表："));
-		linkManListJPanel.add(linkmanPanel, BorderLayout.CENTER);
-		linkManListJPanel.add(addAadDeletePanel, BorderLayout.EAST);
-		this.add(linkManListJPanel, BorderLayout.CENTER);
+		contactListJPanel = new JPanel(new BorderLayout());
+		contactListJPanel.setBorder(BorderFactory.createTitledBorder("联系人列表："));
+		contactListJPanel.add(contactPanel, BorderLayout.CENTER);
+		contactListJPanel.add(addAadDeletePanel, BorderLayout.EAST);
+		this.add(contactListJPanel, BorderLayout.CENTER);
 
 		// 确定取消面板
 		JPanel okAndCancelPanel = new JPanel();
@@ -112,8 +112,8 @@ public class AddLinkManFrame extends JInternalFrame implements ActionListener,
 		okAndCancelPanel.add(cancel);
 		this.add(okAndCancelPanel, BorderLayout.SOUTH);
 		setVisible(true);
-		linkmanEvent = new LinkmanEventAction(nameTF, nickNameTF,
-				emailAdressTF, linkmanList);
+		contactEvent = new ContactEventAction(nameTF, nickNameTF,
+				emailAdressTF, contactList);
 	}
 
 	private Box box() {
@@ -170,11 +170,11 @@ public class AddLinkManFrame extends JInternalFrame implements ActionListener,
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == add) {
-			linkmanEvent.addLinkman();// 添加联系人
+			contactEvent.addContact();// 添加联系人
 		} else if (e.getSource() == delete) {
-			linkmanEvent.deleteLinkman(linkmanList.getSelectedRow());// 删除联系人
+			contactEvent.deleteContact(contactList.getSelectedRow());// 删除联系人
 		} else if (e.getSource() == ok) {
-			linkmanEvent.ok();
+			contactEvent.ok();
 		} else if (e.getSource() == cancel) {
 			this.dispose();// 关闭窗口
 		}

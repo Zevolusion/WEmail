@@ -30,7 +30,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import utils.ClassNameTreeCellRenderer;
 import utils.EditorUtils;
 import utils.FrameFactory;
-import utils.ReadLinkmanXMl;
+import utils.ReadContactXMl;
 import utils.ReceiveMailTable;
 
 public class MainFrame extends JFrame implements ActionListener, MouseListener {
@@ -48,9 +48,9 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 	private JMenuItem receiveMI = null;
 	private JMenuItem recycleMI = null;
 	private JMenuItem refreshMI = null;
-	private JButton addLinkmanButton = null;// 添加联系人按钮
+	private JButton addContactButton = null;// 添加联系人按钮
 	private JMenu mailMenu = null;
-	private ReadLinkmanXMl readLinkman = null;
+	private ReadContactXMl readContact = null;
 
 	// 初始化界面配置
 	public void jFrameValidate() {
@@ -109,13 +109,13 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 		panelframe.add(panel, BorderLayout.CENTER);
 		panelframe.add(tree, BorderLayout.NORTH);
 
-		addLinkmanButton = new JButton();
-		addLinkmanButton.setText("联系人(C)");
-		addLinkmanButton.setIcon(EditorUtils.createIcon("linkman.png"));
-		panel.add(addLinkmanButton, BorderLayout.NORTH);
-		addLinkmanButton.addActionListener(this);// 注册添加联系人事件
-		readLinkman = new ReadLinkmanXMl();
-		jl = readLinkman.makeList();// 返回联系人列表
+		addContactButton = new JButton();
+		addContactButton.setText("联系人(C)");
+		addContactButton.setIcon(EditorUtils.createIcon("contact.png"));
+		panel.add(addContactButton, BorderLayout.NORTH);
+		addContactButton.addActionListener(this);// 注册添加联系人事件
+		readContact = new ReadContactXMl();
+		jl = readContact.makeList();// 返回联系人列表
 		jl.addMouseListener(this);// 添加联系人列表双击事件
 		scrollPane = new JScrollPane();
 		panel.add(scrollPane, BorderLayout.CENTER);
@@ -178,8 +178,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == exitMI) {
 			System.exit(0);// 退出系统
-		} else if (e.getSource() == addLinkmanButton) {
-			addIFame(FrameFactory.getFrameFactory().getAddLinkManFrame());// 联系人列表
+		} else if (e.getSource() == addContactButton) {
+			addIFame(FrameFactory.getFrameFactory().getAddContactFrame());// 联系人列表
 		} else if (e.getSource() == newMailMI) {// 新建邮件
 			addIFame(FrameFactory.getFrameFactory().getSendFrame());// 发件夹
 		} else if (e.getSource() == itemPopupOne || e.getSource() == refreshMI) {// 右键刷新收件列表
@@ -218,7 +218,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 		} else if (e.getSource() == jl && e.getClickCount() == 2) {// 双击联系人事件
 			int index = jl.getSelectedIndex();
 			if (sendFrame != null && sendFrame.isSelected()) {// 如果发送邮件界面被初始化并且被激活
-				sendFrame.addLinkman(readLinkman.findLinkman(index));
+				sendFrame.addContact(readContact.findContact(index));
 			}
 		} else if (e.getButton() == MouseEvent.BUTTON3 && e.getSource() == tree) {// 收件箱右键刷新
 			if (selectedNode == null)

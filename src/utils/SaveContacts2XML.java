@@ -14,23 +14,23 @@ import org.dom4j.io.XMLWriter;
 /**
  * 保存联系人为xml文件
  */
-public class SaveLinkmans2XML {
+public class SaveContacts2XML {
 	private Document document = null;// xml文档对象
-	private Element linkmansElement = null;// 创建根元素
+	private Element contactsElement = null;// 创建根元素
 
 	// 保存联系人为xml文档
-	public boolean saveLinkmanXml(String fileName,
-			Vector<Vector<String>> linkmanVector) {
+	public boolean saveContactXml(String fileName,
+			Vector<Vector<String>> contactVector) {
 		boolean isSave = false;
-		if (linkmanVector.size() > 0) {
+		if (contactVector.size() > 0) {
 			initXml();// 初始化xml文档
-			Iterator<Vector<String>> iterator = linkmanVector.iterator();
+			Iterator<Vector<String>> iterator = contactVector.iterator();
 			while (iterator.hasNext()) {
 				Vector<String> vector = iterator.next();
 				String name = vector.get(0);// 得到姓名
 				String nickname = vector.get(1);// 得到昵称
 				String email = vector.get(2);// 得到邮箱地址
-				saveLinkmanInfor(name, nickname, email);
+				saveContactInfor(name, nickname, email);
 			}
 			saveXMLFile(fileName);// 保存联系人xml文件
 			isSave = true;// 保存成功
@@ -45,26 +45,26 @@ public class SaveLinkmans2XML {
 		// 工厂类。
 		document = DocumentHelper.createDocument();
 		// 使用 addElement() 方法创建根元素 catalog 。addElement() 用于向 XML 文档中增加元素。
-		linkmansElement = document.addElement("linkmans");
-		// 在 linkmans 元素中使用 addComment() 方法添加注释“An XML catalog”。
-		linkmansElement.addComment("我的联系人列表！");
+		contactsElement = document.addElement("contacts");
+		// 在 contacts 元素中使用 addComment() 方法添加注释“An XML catalog”。
+		contactsElement.addComment("我的联系人列表！");
 	}
 
-	private void saveLinkmanInfor(String name, String nickname,
+	private void saveContactInfor(String name, String nickname,
 			String emailadress) {
-		// 在 linkmans 元素中使用 addElement() 方法增加 linkman 元素。
-		Element linkmanElement = linkmansElement.addElement("linkman");
+		// 在 contacts 元素中使用 addElement() 方法增加 contact 元素。
+		Element contactElement = contactsElement.addElement("contact");
 
-		// 添加节点linkman的子节点name；
-		Element nameElement = linkmanElement.addElement("name");
+		// 添加节点contact的子节点name；
+		Element nameElement = contactElement.addElement("name");
 		nameElement.setText(name);
 
-		// 添加节点linkman的子节点nickname
-		Element nicknameElement = linkmanElement.addElement("nickname");
+		// 添加节点contact的子节点nickname
+		Element nicknameElement = contactElement.addElement("nickname");
 		nicknameElement.setText(nickname);
 
-		// 添加节点linkman的子节点emailadress
-		Element emailadressElement = linkmanElement.addElement("emailadress");
+		// 添加节点contact的子节点emailadress
+		Element emailadressElement = contactElement.addElement("emailadress");
 		emailadressElement.setText(emailadress);
 	}
 
